@@ -7,13 +7,16 @@ It does not read from or modify full-stack at runtime and has no database depend
 
 ## API
 
+Hosted endpoint: `https://tada-demo-provider-signin.onrender.com/signin`.
+The organizer provides the API key privately; it is not published in this repository.
+
 `POST /signin` requires an `X-API-Key` header and a JSON object containing only
 `tenant`. Use `prism`, `ukg`, or `isol`. The seeded tenant IDs and names are also
 accepted. For compatibility, a single `provider` field works as an alternative;
 do not send both fields.
 
 ```sh
-curl -X POST "$DEMO_SIGNIN_URL/signin" \
+curl -X POST 'https://tada-demo-provider-signin.onrender.com/signin' \
   -H "X-API-Key: $DEMO_SIGNIN_API_KEY" \
   -H 'Content-Type: application/json' \
   -d '{"tenant":"ukg"}'
